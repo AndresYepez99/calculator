@@ -6,20 +6,6 @@
     font-family: 'Ubuntu', sans-serif;
 }
 
-.light {
-   --white: #f7fbfc;
-   --orange: #fdad10;
-   --gray-screen: #e5eaed;
-   --gray-background: #eff4f9;
-   --dark-gray: #747d84;
-   --dark-blue: #1e2a33;
-
-   --shadow-one:#e6e9ea;
-   --shadow-two:#ffffff;
-
-   --background-p: #e5eaed;
-}
-
 .dark {
    --white: #24313a;
    --orange: #fdad10;
@@ -28,10 +14,25 @@
    --dark-gray: #9ba0a4;
    --dark-blue: #fffffe;
 
-   --shadow-one:#161e25;
-   --shadow-two:#263641;
+   --shadow-one:#1a2329;
+   --shadow-two:#2e3f4b;
+   
 
    --background-p: #222d35;
+}
+
+.light {
+   --white: #f7fbfc;
+   --orange: #fdad10;
+   --gray-screen: #e5eaed;
+   --gray-background: #eff4f9;
+   --dark-gray: #747d84;
+   --dark-blue: #1e2a33;
+
+   --shadow-one:#e8eced;
+   --shadow-two:#ffffff;
+
+   --background-p: #e5eaed;
 }
 
 #background {
@@ -58,6 +59,7 @@ a {
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    transition: 0.3s all;
  }
 
  .container-calculator {
@@ -95,8 +97,6 @@ a {
    color: var(--orange);
    transform: rotate(-90deg);
  }
-
- 
 
  .toolbar {
    height: 40px;
@@ -159,29 +159,29 @@ a {
     background-color: var(--white);
  }
 
- .container-buttons > button {
+button {
     height: 100%;
     width: 100%;
     border: none;
-    font-size: 22px;
+    font-size: 30px;
     font-weight: 500;
-    transition: 0.3s all; 
+    border-radius: 15px;
+    background: var(--white);
+    box-shadow:  5px 5px 10px var(--shadow-one),
+                 -5px -5px 10px var(--shadow-two);
+    transform: scale(0.7);
+    transition: 0.2s all; 
  }
 
- .container-buttons > button:hover {
-   transform: scale(0.8);
-   border-radius: 15px;
+ button:hover {
    color: var(--orange);
-   background: var(--white);
-   box-shadow: inset 5px 5px 10px var(--shadow-one),
-               inset -5px -5px 10px var(--shadow-two);
-}
+ }
 
  
  .btn-operator,
  .btn-delete {
     color: var(--orange);
-    font-size: 56px;
+    font-size: 30px;
     background-color: transparent;
  }
 
@@ -189,6 +189,15 @@ a {
     color: var(--dark-blue);
     background-color: transparent;
  }
+
+ .hover-button {
+   font-size: 25px;
+   color: var(--orange);
+   background: var(--white);
+   box-shadow: inset 5px 5px 10px var(--shadow-one),
+            inset -5px -5px 10px var(--shadow-two);
+}
+
 
  #igual {
     height: 55px;
