@@ -14,11 +14,13 @@
    --dark-gray: #9ba0a4;
    --dark-blue: #fffffe;
 
-   --shadow-one:#1a2329;
-   --shadow-two:#2e3f4b;
-   
+   --button-shadow-one:#1a2329;
+   --button-shadow-two:#2e3f4b;
+   --button-background-p: #222d35;
 
-   --background-p: #222d35;
+   --shadow-calc-one:#444a51;
+   --shadow-calc-two:#505860;
+   --background-calc: #40464d;
 }
 
 .light {
@@ -29,10 +31,14 @@
    --dark-gray: #747d84;
    --dark-blue: #1e2a33;
 
-   --shadow-one:#e8eced;
-   --shadow-two:#ffffff;
+   --button-shadow-one:#e8eced;
+   --button-shadow-two:#ffffff;
+   --button-background-p: #e5eaed;
 
-   --background-p: #e5eaed;
+   --shadow-calc-one:#d7dce0;
+   --shadow-calc-two:#ffffff;
+   --background-calc: #cbcfd4;
+
 }
 
 #background {
@@ -40,7 +46,7 @@
    text-align: justify;
    font-size: 100px;
    text-transform: uppercase;
-   color: var(--background-p);
+   color: var(--background-calc);
    opacity: 0.6;
    z-index: -500;
 }
@@ -66,7 +72,10 @@ a {
     min-height: 740px;
     width: 360px;
     border-radius: 30px;
-    box-shadow: 15px 2px 50px rgba(0, 0, 0, 0.226);
+    border-radius: 50px;
+    background: linear-gradient(45deg, var(--shadow-calc-one), var(--shadow-calc-two));
+    box-shadow:  20px -20px 60px var(--background-calc),
+                -20px 20px 60px var(--button-shadow-two);
  }
  /*------------screen------------*/
  .screen {
@@ -127,25 +136,39 @@ a {
 
 
  .box-result {
+   height: calc(100% - 40px);
+   width: 100%;
    display: flex;
    flex-direction: column;
-   align-items: flex-end;
+   justify-content: end;
+   /*border: 1px solid rebeccapurple;*/
+ }
+
+ .operator,
+ .result {
+   height: auto;
+   width: 100%;
+   text-align: end;
  }
 
 .operator {
+   height: auto;
+   display: flex;
+   flex-direction: column;
    font-size: 15px;
    color: var(--dark-gray);
+
 }
 
 .result {
+   height: 62px;
    font-size: 50px;
    font-weight: bold;
    color: var(--dark-blue);
-
 }
 
 
-
+/*----------key----------*/
  .container-buttons {
     height: 420px;
     width: 100%;
@@ -167,8 +190,8 @@ button {
     font-weight: 500;
     border-radius: 15px;
     background: var(--white);
-    box-shadow:  5px 5px 10px var(--shadow-one),
-                 -5px -5px 10px var(--shadow-two);
+    box-shadow:  5px 5px 3px var(--button-shadow-one),
+                 -5px -5px 3px var(--button-shadow-two);
     transform: scale(0.7);
     transition: 0.2s all; 
  }
@@ -194,22 +217,8 @@ button {
    font-size: 25px;
    color: var(--orange);
    background: var(--white);
-   box-shadow: inset 5px 5px 10px var(--shadow-one),
-            inset -5px -5px 10px var(--shadow-two);
+   box-shadow: inset 5px 5px 3px var(--button-shadow-one),
+            inset -5px -5px 3px var(--button-shadow-two);
 }
 
 
- #igual {
-    height: 55px;
-    width: 55px;
-    border-radius: 10px;
-    color: var(--white);
-    background-color: var(--orange);
- }
-
- #igual:hover {
-   transform: scale(0.9);
-   background: var(--orange);
-      box-shadow: inset 5px 5px 7px var(--orange),
-               inset -5px -5px 7px var(--orange);
-}
