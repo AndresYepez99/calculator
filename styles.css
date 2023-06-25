@@ -152,11 +152,16 @@ a {
  }
 
 .operator {
-   height: auto;
+   margin: 0 auto;
+   height: 180px;
+   width: 95%;
    display: flex;
    flex-direction: column;
+   align-items: flex-start;
+   text-align: left;
    font-size: 15px;
    color: var(--dark-gray);
+   overflow-y: scroll;
 
 }
 
@@ -219,6 +224,17 @@ button {
    background: var(--white);
    box-shadow: inset 5px 5px 3px var(--button-shadow-one),
             inset -5px -5px 3px var(--button-shadow-two);
+}
+
+
+.operator::-webkit-scrollbar {
+   width: 5px;
+   background: transparent;
+}
+
+.operator::-webkit-scrollbar-thumb {
+   background: var(--orange);
+   border-radius: 50px;
 }
 
 
